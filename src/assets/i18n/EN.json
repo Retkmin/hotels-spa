@@ -1,7 +1,35 @@
+
 {
   "home": {
     "title": "Welcome to the Hotel App",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis, urna at cursus dictum, enim urna dictum nisi, nec dictum enim urna at nisi.",
     "goToHotelList": "Go to Hotel List"
+  }
+  ,
+  "hotels": {
+    "title": "Hotels",
+    "status": {
+      "loading": "Loading hotels..."
+    },
+    "noResults": "No hotels found.",
+    "meta": {
+      "stars": "stars",
+      "rate": "Rating:",
+      "price": "Price:",
+      "currency": "€",
+      "address": "Address:",
+      "results": "results",
+      "showing": "Showing",
+      "from": "of"
+    },
+    "pager": {
+      "prev": "Previous",
+      "page": "Page",
+      "next": "Next",
+      "of": "of"
+    }
+  },
+  "common": {
+    "back": "Back"
   }
 }

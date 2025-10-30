@@ -1,2 +1,51 @@
-<h2>Hotel List</h2>
-<!-- Hotel list content will go here -->
+
+<section class="hotel-list">
+  <button type="button" class="btn-back" (click)="goBack()">
+    <i class="bi bi-arrow-left"></i> {{ 'common.back' | translate }}
+  </button>
+  <div class="filter-bar">
+    <app-hotel-filter></app-hotel-filter>
+  </div>
+
+  <div class="status">
+    @if (loading()) {
+      <div>{{ 'hotels.status.loading' | translate }}</div>
+    }
+  </div>
+
+  @if (!loading()) {
+    @if (hotels().length === 0) {
+      <div class="no-results">{{ 'hotels.noResults' | translate }}</div>
+    } @else {
+      <ul class="hotel-items">
+        @for (hotel of hotels(); track hotel.id) {
+          <li class="hotel-item">
+      <div class="hotel-image" role="img" [attr.aria-label]="hotel.name"
+        [class.has-image]="!!hotel.image"
+        [style.backgroundImage]="hotel.image ? 'url(' + hotel.image + ')' : null">
+        <span class="no-image" *ngIf="!hotel.image">{{ 'hotels.noImage' | translate }}</span>
+      </div>
+            <div class="hotel-info">
+              <h3 class="hotel-name">{{ hotel.name }}</h3>
+              <div class="hotel-meta">
+                @for (starIndex of getFiveStarsArray(); track starIndex) {
+                  <i class="bi" [ngClass]="starIndex < hotel.stars ? 'bi-star-fill text-warning' : 'bi-star text-secondary'"></i>
+                }
+                <span class="visually-hidden">{{ hotel.stars }} estrellas</span>
+              </div>
+              <div class="hotel-meta">{{ 'hotels.meta.rate' | translate }} {{ hotel.rate }}</div>
+              <div class="hotel-meta">{{ 'hotels.meta.price' | translate }} {{ hotel.price }} {{ 'hotels.meta.currency' | translate }}</div>
+              <div class="hotel-address">{{ 'hotels.meta.address' | translate }} {{ hotel.address }}</div>
+            </div>
+          </li>
+        }
+      </ul>
+
+      <div class="pagination">
+        <button (click)="goPrev()" [disabled]="prev() === null">{{ 'hotels.pager.prev' | translate }}</button>
+        <span>{{ 'hotels.pager.page' | translate }} {{ page() }} / {{ last() }}</span>
+        <button (click)="goNext()" [disabled]="next() === null">{{ 'hotels.pager.next' | translate }}</button>
+      </div>
+    }
+  }
+</section>

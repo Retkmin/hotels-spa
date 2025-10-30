@@ -4,4 +4,31 @@
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin facilisis, urna at cursus dictum, enim urna dictum nisi, nec dictum enim urna at nisi.",
     "goToHotelList": "Ir a la lista de hoteles"
   }
+  ,
+  "hotels": {
+    "title": "Hoteles",
+    "status": {
+      "loading": "Cargando hoteles..."
+    },
+    "noResults": "No se encontraron hoteles.",
+    "meta": {
+      "stars": "estrellas",
+      "rate": "Valoración:",
+      "price": "Precio:",
+      "currency": "€",
+      "address": "Dirección:",
+      "results": "resultados",
+      "showing": "Mostrando",
+      "from": "de"
+    },
+    "pager": {
+      "prev": "Anterior",
+      "page": "Página",
+      "next": "Siguiente",
+      "of": "de"
+    }
+  },
+  "common": {
+    "back": "Volver"
+  }
 }
