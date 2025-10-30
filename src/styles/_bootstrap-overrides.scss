@@ -1,0 +1,36 @@
+/* Bootstrap overrides that consume our CSS tokens.
+   Kept as a SCSS partial so we can import it from `src/styles.scss`.
+   These rules intentionally use CSS custom properties (var(--...)) so
+   the tokens file remains the single source of truth.
+*/
+
+/* Page background and base font */
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-family-base);
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--color-primary);
+  font-family: var(--font-family-heading);
+}
+
+/* Lead text mapping */
+.lead {
+  color: var(--color-on-background);
+  font-size: var(--font-size-lg);
+}
+
+/* Utility: subtle card background using surface token */
+.card, .bg-surface {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+}
+
+/* Focus outline for accessibility */
+.btn:focus, a:focus, button:focus {
+  outline: 3px solid rgba(76, 63, 58, 0.12);
+  outline-offset: 2px;
+}

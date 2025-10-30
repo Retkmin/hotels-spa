@@ -1,0 +1,48 @@
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border: 1px solid var(--color-primary-dark);
+  padding: 0.75rem 1.25rem;
+  background-size: 10px 10px, auto;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+.btn:focus, a:focus, button:focus, .btn:active, .btn:focus-visible {
+  outline: 3px solid var(--color-primary-dark);
+  outline-offset: 2px;
+  background-color: var(--color-primary-dark);
+  outline-offset: unset;
+  box-shadow: unset;
+}
+
+/* Override Bootstrap active/checked/show selectors for primary buttons */
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.show,
+.btn-check:checked + .btn-primary,
+:not(.btn-check) + .btn-primary:active,
+.btn-primary:first-child:active {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-on-primary);
+}
+
+.btn-primary:focus, .btn-primary:focus-visible {
+  outline: 3px solid var(--color-primary-dark);
+  outline-offset: unset;
+  box-shadow: unset;
+  border-color: var(--color-primary-dark);
+}
