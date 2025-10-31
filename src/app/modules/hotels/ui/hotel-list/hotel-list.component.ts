@@ -1,12 +1,11 @@
 import { Component, OnInit, signal, WritableSignal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
-import { HotelsApiService } from '../../application/services/hotels-api.service';
+import { HotelsApiService } from '../../infrastructure/services/hotels-api.service';
 import { Location } from '@angular/common';
 import { Hotel } from '../../domain/hotel.model';
 import { HotelFilterComponent } from '../hotel-filter/hotel-filter.component';
-import { HotelFilterState } from '../../domain/hotelFilterstate.model';
-
+import { HotelFilterState } from '../../domain/hotelFilterState.model';
 @Component({
   selector: 'app-hotel-list',
   standalone: true,

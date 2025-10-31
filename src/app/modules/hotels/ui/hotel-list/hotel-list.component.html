@@ -20,11 +20,11 @@
       <ul class="hotel-items">
         @for (hotel of filteredHotels(); track hotel.id) {
           <li class="hotel-item">
-      <div class="hotel-image" role="img" [attr.aria-label]="hotel.name"
-        [class.has-image]="!!hotel.image"
-        [style.backgroundImage]="hotel.image ? 'url(' + hotel.image + ')' : null">
-        <span class="no-image" *ngIf="!hotel.image">{{ 'hotels.noImage' | translate }}</span>
-      </div>
+            <div class="hotel-image" role="img" [attr.aria-label]="hotel.name"
+              [class.has-image]="!!hotel.image"
+              [style.backgroundImage]="hotel.image ? 'url(' + hotel.image + ')' : null">
+              <span class="no-image" *ngIf="!hotel.image">{{ 'hotels.noImage' | translate }}</span>
+            </div>
             <div class="hotel-info">
               <h3 class="hotel-name">{{ hotel.name }}</h3>
               <div class="hotel-meta">
