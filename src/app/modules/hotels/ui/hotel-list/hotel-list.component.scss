@@ -157,6 +157,12 @@ h2 {
     color: var(--color-muted);
   }
 
+  .no-results {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 2rem;
+  }
+
   @media (max-width: 768px) {
     .hotel-items {
       grid-template-columns: 1fr;

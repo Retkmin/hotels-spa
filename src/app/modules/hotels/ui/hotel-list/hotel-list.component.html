@@ -4,7 +4,7 @@
     <i class="bi bi-arrow-left"></i> {{ 'common.back' | translate }}
   </button>
   <div class="filter-bar">
-    <app-hotel-filter></app-hotel-filter>
+    <app-hotel-filter (filterChange)="onFilterChange($event)"></app-hotel-filter>
   </div>
 
   <div class="status">
@@ -14,11 +14,11 @@
   </div>
 
   @if (!loading()) {
-    @if (hotels().length === 0) {
+    @if (!filteredHotels() || filteredHotels().length === 0) {
       <div class="no-results">{{ 'hotels.noResults' | translate }}</div>
     } @else {
       <ul class="hotel-items">
-        @for (hotel of hotels(); track hotel.id) {
+        @for (hotel of filteredHotels(); track hotel.id) {
           <li class="hotel-item">
       <div class="hotel-image" role="img" [attr.aria-label]="hotel.name"
         [class.has-image]="!!hotel.image"

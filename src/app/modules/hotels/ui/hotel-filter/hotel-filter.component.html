@@ -1,2 +1,36 @@
-<h3>Hotel Filter</h3>
-<!-- Filter form will go here -->
+
+
+<div class="hotel-filter-container">
+	<h3>{{ 'hotels.filter.title' | translate }}</h3>
+	<form class="hotel-filter-form" [formGroup]="filterForm" (ngSubmit)="emitFilter()">
+    <div class="submit-button-container">
+      <button type="submit" class="btn btn-primary btn-search">{{ 'hotels.filter.button' | translate }}</button>
+    </div>
+		<div class="filter-name-container">
+			<label for="filter-name">{{ 'hotels.filter.name' | translate }}</label>
+			<input id="filter-name" type="text" formControlName="name" [placeholder]="'hotels.filter.namePlaceholder' | translate" />
+		</div>
+
+		<div class="filter-category-container">
+			<label>{{ 'hotels.filter.category' | translate }}</label>
+			<div class="checkbox-group">
+        @for (star of starsList; track star) {
+          <label>
+            <input type="checkbox" [formControl]="starsFormArray.controls[$index]" /> {{star}} {{ 'hotels.meta.stars' | translate }}
+          </label>
+        }
+			</div>
+		</div>
+
+		<div class="filter-row">
+			<div class="filter-rating-container">
+			<label for="filter-rate">{{ 'hotels.filter.minRate' | translate }} {{ filterForm.get('rate')?.value }}</label>
+				<input id="filter-rate" type="range" min="0" max="5" step="0.1" formControlName="rate" />
+			</div>
+			<div class="filter-price-container">
+			<label for="filter-price">{{ 'hotels.filter.maxPrice' | translate }} {{ filterForm.get('price')?.value }}{{ 'hotels.meta.currency' | translate }}</label>
+				<input id="filter-price" type="range" min="50" max="1000" step="1" formControlName="price" />
+			</div>
+		</div>
+  </form>
+</div>

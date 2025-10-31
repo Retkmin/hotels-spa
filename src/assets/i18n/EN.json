@@ -7,6 +7,15 @@
   }
   ,
   "hotels": {
+    "filter": {
+      "title": "Filter hotels",
+      "name": "Name: ",
+      "namePlaceholder": "Search by name",
+      "category": "Category: ",
+      "minRate": "Min. rating: ",
+      "maxPrice": "Max. price: ",
+      "button": "Filter"
+    },
     "title": "Hotels",
     "status": {
       "loading": "Loading hotels..."

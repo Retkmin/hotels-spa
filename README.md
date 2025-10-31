@@ -39,6 +39,12 @@ El modelo de hoteles es el siguiente:
 - **Paginación**: Implementar una pequeña paginación que permita navegar por las diferentes páginas de resultados.
 - **Diseño**: Aunque no es un requisito de esta prueba, se valorará positivamente una interfaz clara y amigable. Para agilizar el desarrollo se puede hacer uso de alguna librería de estilos como [Bootstrap](https://getbootstrap.com/), [Tailwind](https://tailwindcss.com/) o similar.
 
+-Para que la funcionalidad de filtrado de nombre y la paginación funcionen, he hecho downgrade a la versión "json-server": "0.17.4", ya que existe un bug reportado por el cual el name_like no funciona en las versiones más modernas.
+
+https://github.com/typicode/json-server/issues/1509
+
+Esto hace que el objeto que devuelve next, prev y el total de páginas en esta versión no funcione, así que he tenido que hacerlo de forma manual.
+
 ## Configuración del Entorno de Desarrollo 💻
 
 Se te proporcionará un archivo ZIP que contiene el esqueleto inicial del proyecto, junto con un conjunto de datos de hoteles para utilizar como base de datos.
@@ -51,6 +57,8 @@ Se te proporcionará un archivo ZIP que contiene el esqueleto inicial del proyec
 Antes de ejecutar la aplicación, necesitarás generar la base de datos:
 
 1. **Generar la base de datos**: Ejecuta `npm run generate-db` en tu terminal. Esto ejecutará el script `generate-hotels-db.js` para generar el archivo `db.json` con datos aleatorios de hoteles.
+
+- He modificado el generador de db.json para que se actualicen las imágenes que estaban rotas (he obtenido 3 imágenes de Google y las he puesto de forma aleatoria en cada entrada).
 
 ## Ejecutar la Aplicación 🚀
 
